@@ -1,0 +1,59 @@
+
+
+body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    "navbar navbar"
+    "sidebar main"
+    "sidebar footer";
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    
+    top: 0;
+    position: sticky;
+    grid-area: navbar;
+    background-color: black;
+    color: aliceblue;
+    padding: 1.5em;
+    display: flex;
+    
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* aside{
+    top: 51px;
+    position: sticky;
+    align-self: start;
+    grid-area: sidebar;
+} */
+
+h1{
+    text-align: center;
+}
+
+main{
+    grid-area: main;
+    justify-content: center; /* Pusatkan konten */
+    align-items: center;
+    padding: 20px;
+}
+
+footer{
+    background-color: black;
+    text-align: center;
+    grid-area: footer;
+    color: aliceblue;
+}
