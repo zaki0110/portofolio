@@ -4,14 +4,14 @@ body {
     min-height: 100vh;
     padding: 0;
     margin: 0;
-    /* display: grid;
-    grid-template-columns: 300px 1fr;
+    display: grid;
+    grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas: 
     "navbar navbar"
     "sidebar main"
-    "sidebar footer"
-    ; */
+    "footer footer"
+    ;
 }
 
 nav {
@@ -24,6 +24,10 @@ nav {
     padding: 1.5em;
     display: flex;
     
+}
+
+nav button{
+    display: none;
 }
 
 .menu-toggle{
@@ -39,10 +43,14 @@ nav {
 }
 
 aside{
-    top: 51px;
+    top: 71px;
+    height: calc(100vh - 71px);
+    align-self: start;
+    background-color: #0A97B0;
     position: sticky;
     align-self: start;
     grid-area: sidebar;
+    display: none;
 }
 
 h1{
@@ -50,7 +58,7 @@ h1{
 }
 
 .service_area{
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
     text-align: center;
@@ -82,10 +90,6 @@ h1{
     /* width: 300px;
     height: 550px; */
 }
-
-/* aside{
-    grid-area: aside;
-} */
 
 .about_me{
     background-color: #2A3335;
@@ -148,11 +152,27 @@ footer{
         transition: 0.3s;
     }
 
+    nav button{
+        display: block;
+    }
+
     .navbar.show{
         display: flex;
     }
 
     .navbar a{
+        display: block;
+    }
+
+    aside{
+        top: 69px;
+        height: calc(100vh - 69px);
+        position: fixed;
+        width: 80%;
+    }
+
+    .show{
+        width: 80%;
         display: block;
     }
 

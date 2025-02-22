@@ -1,6 +1,5 @@
-// const navbar = document.getElementById('sidebar')
+const sidebar = document.getElementById('side')
 
 function toggleMenu() {
-    const navLinks = document.querySelector(".nav-links");
-    navLinks.classList.toggle("show");
+    sidebar.classList.toggle('show')
 }
