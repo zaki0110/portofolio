@@ -1,5 +1,5 @@
-const sidebar = document.getElementById('side')
-
 function toggleMenu() {
-    sidebar.classList.toggle('show')
+    let sidebar = document.getElementById("side");
+    sidebar.classList.toggle("open");
 }
+document.getElementById("side").addEventListener("click", toggleMenu);

@@ -47,10 +47,12 @@ aside{
     height: calc(100vh - 71px);
     align-self: start;
     background-color: #0A97B0;
-    position: sticky;
+    position: fixed;
     align-self: start;
     grid-area: sidebar;
-    display: none;
+    transition: left 0.3s ease;
+    left: -300px;
+    width: 300px;
 }
 
 h1{
@@ -168,12 +170,10 @@ footer{
         top: 69px;
         height: calc(100vh - 69px);
         position: fixed;
-        width: 80%;
     }
 
-    .show{
-        width: 80%;
-        display: block;
+    .sidebar.open {
+        left: 0 !important; /* Pastikan nilai ini tidak ditimpa */
     }
 
     .text_part{
