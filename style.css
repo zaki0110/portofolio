@@ -21,7 +21,7 @@ nav {
     grid-area: navbar;
     background-color: #2A3335;
     color: aliceblue;
-    padding: 1.5em;
+    padding: 20px;
     display: flex;
     
 }
@@ -37,9 +37,32 @@ nav button{
 .navbar a{
     text-decoration: none;
     color: white;
-    padding: 5px;
+    padding: 10px;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
+}
+
+.anav {
+    display: inline-block;
+    position: relative;
+  }
+  
+.anav::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0A97B0;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+  
+.anav:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 aside{
@@ -48,7 +71,6 @@ aside{
     align-self: start;
     background-color: #0A97B0;
     position: fixed;
-    align-self: start;
     grid-area: sidebar;
     transition: left 0.3s ease;
     left: -300px;
@@ -85,12 +107,18 @@ h1{
 .service{
     background-color: rgba(255, 255, 255); 
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
+    width: 200px;
+    height: 400px;
+}
+
+.service p{
     text-align: justify;
-    /* width: 300px;
-    height: 550px; */
+    font-size: 20px;
+    padding: 10px;
+    margin: 0;
 }
 
 .about_me{
@@ -111,17 +139,46 @@ h1{
 .myself{
     place-items: center;
     background-color: rgba(255, 255, 255); 
-    padding: 20px;
+    padding: 40px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s, box-shadow 0.3s;
     max-width: 800px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: auto 1fr auto; */
+    grid-template-areas: 
+    "text_part photo"
+    "sosmed photo"
+    ;
 }
 
 .text_part{
     text-align: justify;
     font-size: 30px;
+    grid-area: text_part;
 }
+
+.photo{
+    grid-area: photo;
+}
+
+.photo img{
+    width: 200px;
+    height: 240px;
+}
+
+.sosmed{
+    grid-area: sosmed;
+    font-size: 1em;
+}
+
+.sosmed a{
+    text-decoration: none;
+    color: black;
+}
+
 
 footer{
     background-color: black;
@@ -173,7 +230,7 @@ footer{
     }
 
     .sidebar.open {
-        left: 0 !important; /* Pastikan nilai ini tidak ditimpa */
+        left: 0 /* Pastikan nilai ini tidak ditimpa */
     }
 
     .text_part{
